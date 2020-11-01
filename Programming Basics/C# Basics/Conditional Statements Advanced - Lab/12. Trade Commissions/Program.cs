@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace _12.Trade_Commissions
 {
@@ -40,19 +36,20 @@ namespace _12.Trade_Commissions
                 else if (city == "Plovdiv")
                 {
                     if (0 <= sales && sales <= 500)
-                        commision = sales * 0.05;
+                        commision = sales * 0.055;
                     else if (500 < sales && sales <= 1000)
-                        commision = sales * 0.07;
-                    else if (1000 < sales && sales <= 10000)
                         commision = sales * 0.08;
-                    else if (sales > 10000)
+                    else if (1000 < sales && sales <= 10000)
                         commision = sales * 0.12;
+                    else if (sales > 10000)
+                        commision = sales * 0.145;
                 }
                 else
                 {
                     Console.WriteLine("error");
+                    return;
                 }
-                Console.WriteLine($"{commision:f2});
+                Console.WriteLine($"{commision:f2}");
             }
             else
             {
